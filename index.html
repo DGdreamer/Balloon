@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Balloon</title>
+    <link href="css/style.css" rel="stylesheet">
+    <script src="js/main.js"></script>
+</head>
+<body>
+<script>
+    //call与bind
+    var num = 10; //气球数量
+    var wH=window.innerHeight;
+    var wW=window.innerWidth;
+    var bz=160;
+    var timer=null; //初始化定时器
+    init();
+    timer=setInterval(move,1000/30);
+    document.body.addEventListener('click',function (e) {
+        if (e.target.className.toLowerCase()==='balloon')
+        {
+            boom.call(e.target,function () {
+                this.parentNode.removeChild(this);
+            }.bind(e.target)); //用e.target代替this
+           /* e.target.parentNode.removeChild(e.target);*/
+        }
+    })
+</script>
+</body>
+</html>

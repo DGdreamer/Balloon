@@ -1,0 +1,41 @@
+/*
+* @Author: DGdreamer
+* @Date:   2017-08-10 14:08:52
+* @Last Modified by:   DGdreamer
+* @Last Modified time: 2017-08-10 14:09:53
+*/
+    *
+    {
+        margin: 0;
+        padding: 0;
+    }
+    body
+    {
+        overflow: hidden;
+        background:#ccc;
+    }
+    .balloon
+    {
+        position: absolute;
+        top: 0;
+        left: 0;
+        width:160px;
+        height: 160px;
+        background: #faf9f9;
+        border-radius: 160px 160px 64px 160px;
+        transform: rotate(45deg);
+        box-shadow: -8px -8px 80px -8px #873940 inset;
+    }
+    .balloon::after
+    {
+        content: '';
+        width: 0;
+        height: 0;
+        position: absolute;
+        bottom: 0;
+        right: 0;
+        border: 8px solid transparent;
+        border-right-color: #873940;
+        transform: rotate(45deg);
+        border-radius: 16px;
+    }
